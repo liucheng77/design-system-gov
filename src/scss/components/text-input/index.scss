@@ -1,0 +1,64 @@
+.govsa-input {
+ border: none;
+  border-radius: $input-border-radius;
+  color: $darkBlue;
+  height: 2.32em;
+  padding-left: 7px;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+
+  // Placeholder
+  &::placeholder {
+    color: $darkBlue;
+  }
+
+  &:disabled,
+  &[readonly] {
+
+    background-color: $white;
+    &::placeholder {
+      color: $gray;
+    }
+  }
+
+}
+
+.govsa-input__label {
+  font-weight: bold;
+  margin: 0;
+  display: block;
+  color: $darkBlue;
+  padding-left: 8px;
+  border-bottom: 1px solid $white-shade;
+}
+
+.govsa-input--disabled{
+  color: $gray;
+}
+
+.govsa-errorMessage {
+  color: $red;
+  font-size: 14px;
+  display: block;
+  padding: 0px 0px 0px 8px;
+}
+
+.govsa-input--error {
+  border-color: $red;
+}
+
+[dir="rtl"]  {
+  .govsa-input{
+    padding-right: 7px;
+  }
+
+  .govsa-input__label {
+    padding-right: 8px;
+  }
+  .govsa-errorMessage {
+    padding: 0px 8px 0px 0px;
+  }
+}

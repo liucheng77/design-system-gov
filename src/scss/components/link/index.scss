@@ -1,0 +1,57 @@
+
+@mixin govsa-links($col) {
+    font-size: 0.875rem;
+    text-decoration: underline;
+    color: $col;
+
+    i {
+        text-decoration: none !important;
+        color: $col;
+        margin: 0px 10px 0px 10px;
+    }
+
+    &:active {
+        background-color: $yellow;
+        color: $col;
+
+        i {
+            color: $col;
+        }
+    }
+
+    &:hover {
+        i {
+            color: $blue;
+        }
+    }
+    
+}
+
+.govsa-link {
+    @include govsa-links($darkBlue);
+
+}
+
+.govsa-link--secondary {
+    @include govsa-links($blue);
+}
+
+.govsa-link.disabled,
+.govsa-link--secondary.disabled {
+    color: $gray;
+    pointer-events: none;
+
+    i {
+        color: $gray;
+    }
+}
+
+
+
+[dir="rtl"] {
+    .govsa-link {
+        .govsa--arrowleft {
+            transform: scaleX(-1);
+        }
+    }
+}

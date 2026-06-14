@@ -1,0 +1,33 @@
+.govsa-tag{
+    border: 1px solid $darkBlue;
+    border-radius: 8px;
+    padding: 5px 8px 5px 8px;
+    color: $darkBlue;
+    font-size: 0.88rem;
+    
+    .govsa-clear__button{
+      vertical-align: top;
+      border: none;
+      padding: 0px;
+      &:active{
+          outline: none;
+          box-shadow: none;
+      }
+      img{
+        position: relative;
+        top: 4px;
+        margin: 0px 0px 0px 10px;
+      }
+    }
+}
+
+[dir="rtl"] {
+    .govsa-tag {
+        vertical-align: middle;
+        padding: 2px 8px 2px 8px;
+        img{
+            top: 5px;
+            margin: 0px 10px 0px 0px;
+          }
+    }
+}

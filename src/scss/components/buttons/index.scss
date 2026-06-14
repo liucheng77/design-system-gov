@@ -1,0 +1,76 @@
+.btn { 
+  position: relative;
+  color: #fff;
+  padding-top:0px;
+  padding-bottom: 0px;
+  text-align: center;
+  text-transform: uppercase;
+  i{
+    margin: 0px 10px 0px 10px;
+    font-size: 0.8rem;
+    [dir="rtl"] &{
+    position: relative;
+    top: 2px;
+  }
+  }
+  &:focus {
+    color: #fff;
+    outline: 0;
+    box-shadow:  $btn-focus-box-shadow;
+    &::after {
+     //background: $yellow;
+      // width: 108%;
+      // content: "";
+      // height: 108%;
+      // left: -4%;
+      // right: -4%;
+      // top: -4%;
+     // box-shadow: 0 0 0px 3px $yellow;
+      /* create a new stacking context */
+      // position: absolute;
+      // z-index: -1; /* to be below the parent element */
+    }
+  }
+  &.disabled {
+    opacity: 0.4; //TODO there should be some css rules FOR .disabled where colors take the rgba of .4 for any color class mixed with a .disabled
+    pointer-events: none;
+    cursor: default;
+  }
+}
+
+
+@each $color, $value in $theme-colors {
+  .govsa-btn--#{$color} {
+    @include button-variant($value, $value);
+    min-width: 100px;
+    &:focus {
+      box-shadow: 0 0 0px 3px $yellow;
+    }
+    &:active:focus{
+      box-shadow: 0 0 0px 3px $yellow !important;
+    }
+    &:disabled{
+      opacity: 0.4;
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .govsa-btn--outline--#{$color} {
+    @include button-outline-variant($value);
+    min-width: 100px;
+    background-color:#fff;
+    &:focus {
+      color: $value;
+      background-color:#fff;
+      box-shadow: 0 0 0px 3px $yellow;
+    }
+
+    &:active:focus{
+      box-shadow: 0 0 0px 3px $yellow !important;
+    }
+
+  }
+ 
+}
+
