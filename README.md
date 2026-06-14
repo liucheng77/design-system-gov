@@ -242,3 +242,4 @@ Run `yarn  start:dev` to start to webpack dev server with HMR ready
 ## For production 
 
 Run `yarn  build` to build project's all assets in `dist` folder.
+<!-- trigger rebuild -->
